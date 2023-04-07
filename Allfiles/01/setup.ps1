@@ -93,7 +93,7 @@ $locations = Get-AzLocation | Where-Object {
     $_.Providers -contains "Microsoft.Compute" -and
     $_.Location -in $preferred_list
 }
-$max_index = $locations.Count - 1
+$max_index = $locations.Count
 $rand = (0..$max_index) | Get-Random
 $Region = $locations.Get($rand).Location
 
